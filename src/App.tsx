@@ -11,25 +11,13 @@ import EditBlog from "./pages/EditBlog";
 import Footer from "./components/Footer";
 import { auth } from "./firebaseConfig";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { setPersistence, browserLocalPersistence, onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 
 const App: React.FC = () => {
   const [user, setUser] = useState(auth.currentUser);
   const [isLoading, setIsLoading] = useState(true);
   
-  // Set global persistence and handle auth state changes
   useEffect(() => {
-    const setAuthPersistence = async () => {
-      try {
-        await setPersistence(auth, browserLocalPersistence);
-        console.log("Auth persistence set to local.");
-      } catch (error) {
-        console.error("Error setting auth persistence:", error);
-      }
-    };
-
-    setAuthPersistence();
-
     // Listen for authentication state changes
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
