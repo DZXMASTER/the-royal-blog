@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import { auth, db } from "../firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -40,6 +40,7 @@ const Login: React.FC = () => {
       navigate("/blog-list");
     } catch (error) {
       console.error("Error during login:", error);
+      await signInWithRedirect(auth, provider);
     }
   };
 
