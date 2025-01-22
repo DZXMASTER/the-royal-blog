@@ -16,6 +16,12 @@ import { onAuthStateChanged } from "firebase/auth";
 const App: React.FC = () => {
   const [user, setUser] = useState(auth.currentUser);
   const [isLoading, setIsLoading] = useState(true);
+
+  const isFirebaseHandler = window.location.pathname.startsWith("/__/auth/handler");
+
+  if (isFirebaseHandler) {
+    return null; // Let Firebase handle the route
+  }
   
   useEffect(() => {
     // Listen for authentication state changes
