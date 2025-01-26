@@ -1,6 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/__/auth/**", "destination": "/__/auth/handler" },
-      { "source": "/(.*)", "destination": "/index.html" }
-    ]
-  }
