@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { signInWithPopup, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth, db } from "../firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -26,8 +26,8 @@ const Login: React.FC = () => {
   };
 
   const handleGoogleLogin = async () => {
-    const provider = new GoogleAuthProvider();
     try {
+      const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       await setDoc(doc(db, "users", user.uid), {
@@ -39,8 +39,7 @@ const Login: React.FC = () => {
       console.log("User logged in:", result.user);
       navigate("/blog-list");
     } catch (error) {
-      console.error("Error during login:", error);
-      await signInWithRedirect(auth, provider);
+      console.error("Google login error:", error);
     }
   };
 

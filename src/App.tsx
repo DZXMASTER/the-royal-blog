@@ -16,12 +16,8 @@ import { onAuthStateChanged } from "firebase/auth";
 const App: React.FC = () => {
   const [user, setUser] = useState(auth.currentUser);
   const [isLoading, setIsLoading] = useState(true);
-  const [isFirebaseHandler, setIsFirebaseHandler] = useState(false);
   
   useEffect(() => {
-    // Check if the current route is a Firebase handler route
-    setIsFirebaseHandler(window.location.pathname.startsWith("/__/auth/handler"));
-
     // Listen for authentication state changes
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -30,6 +26,8 @@ const App: React.FC = () => {
 
     return () => unsubscribe(); // Cleanup the listener on component unmount
   }, []);
+
+  const isFirebaseHandler = window.location.pathname.includes("/__/auth/handler");
 
   if (isFirebaseHandler) {
     return null; // Let Firebase handle the route

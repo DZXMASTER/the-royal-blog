@@ -39,8 +39,8 @@ const Register: React.FC = () => {
   };
 
   const handleGoogleSignUp = async () => {
-    const provider = new GoogleAuthProvider();
     try {
+      const provider = new GoogleAuthProvider();
       // Open the Google sign-in popup
       const result = await signInWithPopup(auth, provider);
 
