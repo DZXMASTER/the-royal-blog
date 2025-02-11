@@ -1,46 +1,97 @@
-# Getting Started with Create React App
+The Royal Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+About the Project
 
-## Available Scripts
+The Royal Blog is a modern and interactive blogging platform designed to allow users to:
 
-In the project directory, you can run:
+Register and log in using Google authentication.
 
-### `npm start`
+Create, edit, and manage blog posts with a user-friendly interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Browse and explore blog posts from other users.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Maintain a personalized profile with their published content.
 
-### `npm test`
+Secure access to private user data and content.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Current Status
 
-### `npm run build`
+This project is has been deployed, with core features implemented and further improvements planned.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Frontend: Next.js (React) / Tailwind CSS / TypeScript
+Backend: Firebase (Authentication, Firestore, Storage)
+Authentication: Firebase Authentication (Google Sign-In)
+Real-Time Features: WebSockets for live updates
+Deployment: Vercel
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Features
 
-### `npm run eject`
+Implemented:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+User Authentication: Google Sign-In, protected routes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Blog Creation & Management: Users can write, edit, and delete blog posts.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Profile System: Each user has a profile displaying their blog posts.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Responsive Design: Optimized for mobile and desktop views.
 
-## Learn More
+Real-Time Updates: Blogs update dynamically without needing to refresh the page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Secure Data Handling: Firebase security rules ensure data privacy.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Planned:
+
+Comment System: Users can leave comments on posts.
+
+Likes and Reactions: Interactive engagement with blog content.
+
+Categories and Tags: Organize posts by topic.
+
+Search and Filters: Easily find relevant blog posts.
+
+Dark Mode: Toggle between light and dark themes.
+
+SEO Optimization: Enhance visibility on search engines.
+
+Roadmap
+
+Phase 1: Core Functionality
+
+Set up authentication and routing.
+
+Implement CRUD operations for blog posts.
+
+Design a responsive UI.
+
+Integrate Firebase for storage and database.
+
+Phase 2: Enhancements
+
+Add real-time features using WebSockets.
+
+Improve UI/UX based on user feedback.
+
+Implement search and filtering functionalities.
+
+Phase 3: Community Features
+
+Enable comments and reactions.
+
+Add categories and tags for better organization.
+
+Implement a following system to track favorite authors.
+
+Phase 4: Optimization & Deployment
+
+Conduct thorough testing and bug fixes.
+
+Optimize performance and SEO.
+
+Deploy final version to production.
+
+Deployment
+
+The Royal Blog is currently deployed on Vercel: The Royal Blog
